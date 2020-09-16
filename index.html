@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- https://code.jquery.com/jquery-1.12.4.js -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="../css/js/jquery-1.12.4.js"></script> -->
+    <script src = "https://code.jquery.com/jquery-1.12.4.js"></script>
+    <!-- <script src="../css/js/jquery-ui.js"></script> -->
+    <script src="../css/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- 위에 놈이 글리피콘을 불러오는 역할을 수행한다. -->
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background-color : #101010;
+        border : 1px solid #101010;
+        /* border : 1px solid red; */
+        height : 7800px;
+        margin:0px;
+    }
+
+    /* 공통양식 -> 표처럼 생긴 양식 */
+    .interest {
+        /* border: 2px solid #212121; */
+        height : 250px; 
+        width: 1004px;
+		margin: 0px auto;
+		color: #444;
+        border-collapse: collapse;
+    }
+    .interest td {
+        border: 2px solid #212121;
+        width : 334px;
+        border-bottom : 0px;
+    }
+    
+    .interestTitle {
+        /* border: 1px solid red; */
+        font-size: 30px;
+        font-weight: bold;
+        color : #FFFFFF;
+        width : 120px;
+        margin-left : 40px;
+        margin-top : 160px;
+    }
+
+    .interestContent {
+        /* border: 1px solid yellow; */
+        border-top: 0px;
+        height : 250px; 
+        width: 1004px;
+        margin: 0px auto;
+        border-collapse: collapse;
+        border-bottom: 0px;
+    }
+
+    .interestContent td {
+        border: 2px solid #212121;
+        border-bottom: 0px;
+    }
+    .bigInter {
+        width : 470px;
+    }
+    .inter1 {
+        /* border: 1px solid red; */
+        color : #48F19C;
+        font-size: 3em;
+        text-align: center;
+    }
+    .inter1cont {
+        /* border: 1px solid red; */
+        color : #fff;
+        font-size: 1.5em;
+        text-align: center;
+    }
+    .inter1contdetail {
+        /* border: 1px solid red; */
+        font-size: 16px;
+        color: #BBBBBB;
+        text-align: center;
+    }
+
+    /* 나의 skill  */
+    .ineerimg {
+            /* border: 1px solid red; */
+            height : 150px;
+            width : 150px;
+            margin : 0px auto;
+            margin-bottom: 10px;
+            background-repeat: no-repeat;
+            background-size: cover;
+    }
+    
+    
+</style>
+
+
+<body>
+    
+    <!---------------------페이지 상단  시작-------------------------->
+    <div id = "topTitle">
+        <nav id="title" class = "topcontent">
+            <span data-item="item1">Software Developer</span>
+        </nav>
+        <nav id="menu" class = "topcontent">
+            <span id="item1" class = "topbtn" style = "color : white;">Home</span>
+			<span id="item2" class = "topbtn">About</span>
+			<span id="item3" class = "topbtn">Skill</span>
+			<span id="item4" class = "topbtn">Portfolio</span>
+			<span id="item5" class = "topbtn">Contact</span>
+        </nav>
+    </div>
+    
+    <style>
+        #topTitle {
+            /* border: 1px solid white; */
+            height : 100px;
+            width : 100%;
+            position: fixed;
+            background-color: #101010;
+            z-index: 10;
+        }
+        #title {
+            /* border: 1px solid red; */
+            color : white;
+            width : 500px;
+            font-size: 1.2em;
+            float : left;
+            margin-left : 20px;
+            font-variant: small-caps;
+        }
+        #menu > span {
+            /* border: 1px solid grey; */
+            margin-left : 30px;
+        }
+        #menu {
+            /* border: 1px solid orange; */
+            color: #A3A3A3;
+            width : 520px;
+            font-size: 1.2em;
+            float : right;
+            font-variant: initial;
+        }
+        .topbtn {
+            transition: all .2s;
+        }
+        .topcontent {
+            margin-top : 55px;
+        }
+        .topbtn:hover {
+            cursor:pointer;
+            /* color : white; */
+        }
+  
+
+        
+    </style>
+        
+    <script>
+
+        //최상단 메뉴호버 처리 
+        $(".topbtn").mouseenter(function(){
+            event.preventDefault();
+            $(this).css("color","white");
+        });
+
+        $(".topbtn").mouseleave(function () {
+            event.preventDefault();
+            $(this).css("color", "#A3A3A3");
+        });
+
+        //Home 을 눌렀을 경우에
+        $("#item1").click(function(){
+            
+            //$(this).css("color","white");
+            // event.preventDefault();
+			$("html,body").animate({
+				scrollTop: 0
+			}, 800);
+        });
+
+        //About 을 눌렀을 경우에
+        $("#item2").click(function(){
+            // event.preventDefault();
+			$("html,body").animate({
+				scrollTop: 900
+			}, 800);
+        });
+        // skill 눌렀을 경우에
+        $("#item3").click(function () {
+
+            // event.preventDefault()
+            $("html,body").animate({
+                scrollTop: 3250
+            }, 800);
+        });
+
+        // 포트폴리오 눌렀을 경우에
+        $("#item4").click(function () {
+
+            // event.preventDefault()
+            $("html,body").animate({
+                scrollTop: 5250
+            }, 800);
+        });
+
+        //contact 눌렀을 경우에
+        $("#item5").click(function () {
+            
+            // event.preventDefault()
+            $("html,body").animate({
+                // scrollTop: 6350
+                scrollTop: 6850
+            }, 800);
+        });
+
+
+        //마우스를 적당히 내렸을때 상단바의 메뉴색을 변경해줄것
+        $(document).scroll(function () {
+
+            $(".topbtn").css("color","#A3A3A3");
+
+            if ($(document).scrollTop() >= 0 && $(document).scrollTop() < 900) {
+                $("#item1").css("color","white");
+            } else if ($(document).scrollTop() >= 900 && $(document).scrollTop() < 3250) {
+                $("#item2").css("color", "white");
+            } else if ($(document).scrollTop() >= 3250 && $(document).scrollTop() < 5250) {
+                $("#item3").css("color", "white");
+            } else if ($(document).scrollTop() >= 5250 && $(document).scrollTop() < 6850) {
+                $("#item4").css("color", "white");
+            } else {
+                $("#item5").css("color", "white");
+            }
+
+        });
+        
+    </script>
+    <!---------------------페이지 상단 끝-------------------------->
+    
+
+
+    <!-------------------- 마우스 원 시작 -------------------->
+    <!-- <div id="result" style="position: absolute; background: green; width: 30px; height: 30px; opacity: 0.4; border-radius: 100%;"> 
+    </div> -->
+
+
+    <!-------------------- 마우스 원 끝 -------------------->
+
+
+
+
+    <!---------------------페이지 상단 사진 시작-------------------------->
+    <div id = "topPic">
+       <div id = "topPicWriter">
+           <span id = "topPicWriter2"></span>
+       </div>
+    </div>
+
+    <style>
+        #topPic {
+            /* border: 1px solid orange; */
+            width : 100%;
+            height : 1000px;
+            background-image: url(./images/background.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position-y: 10%;
+            background-color:#101010; 
+        }
+        #topPicWriter {
+            /* border: 1px solid red; */
+            position: relative;
+            width: 1525px;
+            height: 200px;
+            top : 40%;
+            left : 10%;
+            text-align: center;
+        }
+        #topPicWriter span {
+            color : white;
+            font-size: 6em;
+            font-family: fantasy;
+            
+        }
+
+    </style>
+
+    <script>
+        
+        var topPicWriter2Text = "";
+        var cycle = 0;
+        var num = 0;
+        var textList = ["I"," ","c","o","d","e"," ","c","o","o","l"," ","w","e","b","s","i","t","e", "", "", "", "", "", "", "", "", ""];
+        // var textListNew = ["I", " ","L","o","v","e"," ","J","a","v","a","♥","","","","",""];
+        var textListNew = ["C","r","e","a","t","e"," ","w","h","a","t"," ","y","o","u"," ","w","a","n","t"," ","t","o"," ","u","s","e", "", "", "", "", "", "","", "", ""];
+        var textListOld = ["S","t","a","y"," ","H","u","n","g","r","y",", ","S","t","a","y"," ","F","o","o","l","i","s","h", "", "", "", "", "", "", "", "", ""];
+        var selectWord = 0;
+        var texts = [textList,textListNew,textListOld];
+        var selectText = "";
+        $(document).ready(function(){
+            timer = setInterval(function(){
+                
+                if (selectWord == 0) {
+                    selectText = texts[0];
+                } else if (selectWord == 1) {
+                    selectText = texts[1];
+                } else {
+                    selectText = texts[2];
+                }
+
+                if (cycle % 2 == 0) {
+                    if (num == selectText.length-1) {
+                        topPicWriter2Text += selectText[num];
+                        $("#topPicWriter2").text(topPicWriter2Text);
+                        cycle++;
+                    } else {
+                        topPicWriter2Text += selectText[num];
+                        $("#topPicWriter2").text(topPicWriter2Text);
+                        num++;
+                    }
+                } else {
+                    if (num == 0) {
+                       $("#topPicWriter2").empty();
+                        topPicWriter2Text = topPicWriter2Text.substr(0,(num-1));
+                        $("#topPicWriter2").text(topPicWriter2Text);
+                        cycle++;
+                        if (selectWord == 2){
+                            selectWord=0;
+                        } else {
+                            selectWord++;
+                        }
+                        
+                    } else {
+                        $("#topPicWriter2").empty();
+                        topPicWriter2Text = topPicWriter2Text.substr(0,(num-1));
+                        $("#topPicWriter2").text(topPicWriter2Text);
+                        num--;
+                    }
+                }
+            },50);
+        });
+        
+
+    </script>
+    <!---------------------페이지 상단 사진 끝-------------------------->
+
+    
+
+    <!--------------------------About 시작------------------------------->
+    
+    
+    <div id = "resume">
+        <div id = "resumePic"></div>
+        <div id = "resumeText">
+            <span>
+                웹 개발자를 꿈꾸는 <span style = "color : #48F19C; font-weight: bold; font-size: 1.2em;"> 신승환 </span>입니다. 
+                <br>
+                주로사용하는 기술은 Java,HTML,CSS,JavaScript,JSP,Spring,Oracle DB 입니다.
+                <br>
+                또한, Python,C 프로그래밍 언어에 대한 전반적인 이해도 있습니다.
+                <br>
+                유연한 사고와 수학적능력을 기반으로한 프로그램 설계/구현에 자신이 있습니다.
+                <br>
+            </span>
+        </div>
+        
+        <table id = "resumeInfo">
+            <tr>
+                <td><strong class = "titleInfoText">Name:</strong> Seung Hwan Shin</td>
+                <td><strong class = "titleInfoText">Date of Birth:</strong> 1993-08-23</td>
+            </tr>
+            <tr>
+                <td><strong class="titleInfoText">Age:</strong> 28</td>
+                <td><strong class="titleInfoText">Residence:</strong> Republic Of Korea</td>
+            </tr>
+            <tr>
+                <td><strong class = "titleInfoText">Phone:</strong> 010-5139-3792</td>
+                <td><strong class = "titleInfoText">E-mail:</strong> ssh9308@naver.com</td>
+            </tr>
+            <tr>
+                <td><strong class = "titleInfoText">Availability date:</strong> Immediately</td>
+                <td><strong class = "titleInfoText">Address:</strong> Seoul Songpa</td>
+            </tr>
+        </table>
+        
+        <!-- Availability date : Immediately -->
+
+        <button id = "resumeGit">
+            <i class="icofont-github"></i>connect to git
+        </button>
+    </div>
+    <style>
+        #resume {
+            border: 2px solid #212121;
+            border-bottom: 0px;
+            height : 350px; 
+            width: 1004px;
+			margin: 30px auto;
+			color: #444;
+            margin-bottom: 0px;
+        }
+        #resumePic {
+            /* border: 1px solid red; */
+            margin : 30px;
+            width : 150px;
+            height : 200px;
+            background-image: url(./images/ssh.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            float: left;
+        }
+        #resumeText {
+            /* border: 1px solid red; */
+            width : 700px;
+            height : 100px;
+            float: left;
+            margin-top: 30px;
+            color : #BBBBBB;
+        }
+        #resumeInfo {
+            /* border: 1px solid red; */
+            float: left;
+            width : 702px;
+            height : 100px;
+            border-collapse: collapse;
+        }
+        #resumeInfo td {
+            /* border: 1px solid yellow; */
+            border-collapse: collapse;
+            width : 351px;
+            padding-left : 10px;
+            color : #BBBBBB;
+        }
+        .titleInfoText {
+            color : #48F19C;
+        }
+        #resumeGit {
+            border : 1px solid  #48F19C;
+            background-color: #101010;
+            color : #48F19C;
+            font-size: 1.2em;
+            width : 150px;
+            height: 40px;
+            margin-top : 20px;
+            transition: all 1s;
+            outline: none;
+        }
+        #resumeGit:hover {
+            cursor:pointer;
+            color : black;
+            background-color: #48F19C;
+        }
+
+    </style>
+    <script>
+        $("#resumeGit").click(function(){
+            window.open("https://github.com/sexyseunghwan","github");
+        });
+    </script>
+    <!-- ----------------------------education & experience------------------------------- -->
+    <table class="interest">
+        <tr>
+            <td>
+                <div class="interestTitle">Education</div>
+            </td>
+            <td></td>
+            <td>
+                <div class="interestTitle" style = "margin-left : 130px;">Experience</div>
+            </td>
+        </tr>
+    </table>
+
+    <table class="interestContent" style="height : 200px;">
+        <tr>
+            <td class = "smallInter">
+                <div class = "period">2020 - Present</div>
+                <div class = "contentTitle">SIST - 쌍용교육센터</div>
+                <div class = "contentText">
+                    관계형 데이터베이스, 객체지향 프로그래밍, 웹 서버 프로그래밍, 웹 클라이언트 프로그래밍을 배웠고 현재 실무 프로젝트 통합구현을 진행하고 있습니다.
+                </div>
+            </td>
+            <td></td>
+            <td class = "smallInter">
+                <div class="period">2019 - 2020</div>
+                <div class="contentTitle">산학협력단 DSML CENTER</div>
+                <div class="contentText">딥러닝 연구보조를 맡았습니다.<br>anaconda,matplot,numpy 등을 사용하여 <br>인공신경망 학습(Artificial neural network learning)을 구현한 경험이 있습니다.</div>
+            </td>
+        </tr>
+    </table>
+    
+
+
+    <table class="interestContent" style="height : 100px;">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+
+    <table class="interestContent" style="height : 200px;">
+        <tr>
+            <td class = "smallInter">
+                <div class="period">2013 - 2019</div>
+                <div class="contentTitle">수원대학교 - 수학과</div>
+                <div class="contentText">수학과에 진학하여 기초 수학인 선형대수,미적분을 배웠고 컴퓨터 사이언스와 관련된 정보수학,컴퓨터이론을 배웠습니다.</div>
+            </td>
+            <td></td>
+            <td class = "smallInter">
+                <div class="period">2017 - 2018</div>
+                <div class="contentTitle">교내 DATA-SCIENCE 장학생</div>
+                <div class="contentText">교내 DATA-SCIENCE 장학생 으로 선발되어<br> 데이터사이언스 분야에 대해 연구할 기회를<br> 가졌습니다.</div>
+            </td>
+        </tr>
+    </table>
+
+    <table class="interestContent" style="height : 100px;">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <table class="interestContent" style="height : 200px;">
+        <tr>
+            <td class="smallInter">
+                <div class="period">2009 - 2012</div>
+                <div class="contentTitle">배명고등학교</div>
+                <div class="contentText">인문계 고등학교로 진학했습니다.</div>
+            </td>
+            <td></td>
+            <td class="smallInter">
+                <div class="period">2016 - 2018</div>
+                <div class="contentTitle">한중교류회</div>
+                <div class="contentText">한중교류회(한국학생과 중국학생 간의 교류)<br> 임원으로 활동하며, 모임원들과 소통하며<br>의사소통 능력을 키웠습니다.
+
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <style>
+        .smallInter {
+            width : 400px;
+        }
+        /* 활동기간 */
+        .period {
+            /* border: 1px solid red; */
+            width : 200px;
+            height : 20px;
+            margin-left : 50px;
+            margin-bottom : 10px;
+            padding:0px;
+            /* font-size: 0.8em; */
+            font-weight: bold;
+            color : #48F19C;
+        }
+        /* 활동 타이틀 */
+        .contentTitle {
+            /* border: 1px solid blue; */
+            width : 300px;
+            height : 30px;
+            margin-left : 50px;
+            margin-bottom : 20px;
+            padding:0px;
+            font-weight: bold;
+            font-size: 1.3em;
+            color : white;
+        }
+        /* 활동 타이틀 설명 */
+        .contentText {
+            /* border: 1px solid yellow; */
+            width : 300px;
+            margin-left : 50px;
+            height : 80px;
+            padding:0px;
+            color : #BBBBBB;
+        }
+        
+    </style>
+
+
+    <!-- ----------------------------Strength------------------------------- -->
+    <table class = "interest">
+        <tr>
+            <td><div class = "interestTitle">Strength</div></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <table class = "interestContent">
+        <tr>
+            <td class = "bigInter">
+                <div class = "inter1"><i class="icofont-key"></i></div>
+                <div class = "inter1cont">Problem solving ability</div>
+                <div class = "inter1contdetail">문제 해결 능력</div>
+            </td>
+            <td></td>
+            <td class = "bigInter">
+                <div class = "inter1"><i class="icofont-users-social"></i></div>
+                <div class = "inter1cont">RelationShip</div>
+                <div class = "inter1contdetail">의사소통 능력</div>
+            </td>
+        </tr>
+    </table>
+    
+    
+    <table class = "interestContent" style = "height : 100px;">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <table class = "interestContent">
+        <tr>
+            <td class = "bigInter">
+                <div class = "inter1"><i class="icofont-unique-idea"></i></div>
+                <div class = "inter1cont">Creative thinking</div>
+                <div class = "inter1contdetail">창의적 사고</div>
+            </td>
+            <td></td>
+            <td class = "bigInter">
+                <div class = "inter1"><i class="icofont-learn"></i></div>
+                <div class = "inter1cont">Willingness to learn</div>
+                <div class = "inter1contdetail">배우려는 의지</div>
+            </td>
+        </tr>
+    </table>
+    
+    <!--------------------------About 끝------------------------------->
+    
+    <!--------------------------Skill 시작------------------------------->
+
+    <table id = "skilltbl">
+        <tr>
+            <th><div class = "interestTitle">Skill<div></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td colspan = "2">
+                <div class = "skillImgs" id = "skim1"></div>
+                <div class = "skillImgs" id = "skim2"></div>
+                <div class = "skillImgs" id = "skim3"></div>
+            </td>
+            <td style = "border-right: hidden;"></td>
+        </tr>
+        <tr>
+            <td style = "border-left: hidden;"></td>
+            <td colspan = "2">
+                <div class="skillImgs" id = "skim4"></div>
+                <div class="skillImgs" id = "skim5"></div>
+                <div class="skillImgs" id = "skim6"></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan = "2">
+                <div class="skillImgs" id = "skim7"></div>
+                <div class="skillImgs" id = "skim8"></div>
+                <div class="skillImgs" id = "skim9"></div>
+            </td>
+            <td style = "border-right: hidden;"></td>
+        </tr>
+        <tr>
+            <td style = "border-left: hidden;"></td>
+            <td colspan = "2">
+                <div class="skillImgs" id = "skim10"></div>
+                <div class="skillImgs" id = "skim11"></div>
+                <div class="skillImgs" id = "skim12"></div>
+            </td>
+        </tr>
+    </table>
+
+
+    <style>
+        #skilltbl {
+            border: 2px solid #212121;
+            height : 250px; 
+            width: 1004px;
+		    margin: 0px auto;
+		    color: #444;
+        }
+        #skilltbl td,th {
+            border: 2px solid #212121;
+
+        }
+        #skilltbl th {
+            font-size: 30px;
+            font-weight: bold;
+            color : #FFFFFF;
+            width : 160px;
+            height: 250px;
+            margin-left : 40px;
+            margin-top : 160px;
+        }
+        #skilltbl td {
+            height: 250px;
+            width : 33.3%;
+        }
+        /* 스킬이미지에 대하여 */
+        .skillImgs {
+            /* border: 1px solid red; */
+            width : 180px;
+            height : 180px;
+            float : left;
+            margin-left: 32px;
+            background-repeat: no-repeat;
+        }
+
+        #skim1 {
+           
+            background-image: url(./images/java.png);
+            background-size: cover;
+        }
+        #skim2 {
+           
+            background-image: url(./images/python.png);
+            background-size: cover;
+        }
+        #skim3 {
+           
+            background-image: url(./images/clang.png);
+            background-size: 80%;
+            background-position: 50%;
+        }
+        /* webser.png */
+        #skim4 {
+           
+            background-image: url(./images/webser.png);
+            background-size: 90%;
+            background-position: 50%;
+        }
+        #skim5 {
+       
+            background-image: url(./images/jquery.png);
+            background-size: 60%;
+            background-position: 50%;
+        }
+        #skim6 {
+       
+            background-image: url(./images/bootstrap.png);
+            background-size: cover;
+            background-position: 50%;
+        }
+        #skim7 {
+
+            background-image: url(./images/ajax.png);
+            background-size: 60%;
+            background-position: 50%;
+        }
+        #skim8 {
+            background-image: url(./images/oracle.png);
+            background-size: cover;
+            background-position: 50%;
+        }
+        #skim9 {
+            background-image: url(./images/spring.png);
+            background-size: cover;
+            background-position: 50%;
+        }
+        #skim10 {
+            background-image: url(./images/anaconda.png);
+            background-size: 100%;
+            background-position: 50%;
+        }
+        #skim11 {
+            background-image: url(./images/numpy.png);
+            background-size: 90%;
+            background-position: 50%;
+        }
+        #skim12 {
+            background-image: url(./images/jupyter.png);
+            background-size: 70%;
+            background-position: 50%;
+        }
+    </style>
+    
+
+
+    <script>
+        
+
+    </script>
+
+    <!--------------------------Skill 끝------------------------------->
+
+    <!--------------------------Knowledge 시작------------------------------->
+    <table class="interest" style="border-top:hidden;">
+        <tr>
+            <td style="width : 333px;">
+                <div class="interestTitle">Knowledge</div>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div id = "knowledgeSelect">
+        <div><span class = "checkIcon"><i class="icofont-check"></i></span><span class = "innerKnowCont">객체지향언어</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">C 언어</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">메모리 누수 관리</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">자료구조</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">Sorting algorithm</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">웹 페이지 구조</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">관계형 데이터베이스</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">JDBC 를 통한 데이터와 JAVA 의 연동</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">Web Client Service</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">Web Server Service</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">Artificial neural network learning</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">AJAX 를 통한 동기/비동기 처리</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">vector algorithm</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">computing graph theory</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">Bruteforcing algorithm</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">Binary search</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">Primality test algorithm</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">DDL,DML</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">Web Socket 활용</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">Geometry algorithm</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">PL/SQL</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">httpSession, Cookie</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">EL ,JSTL</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">myBATIS</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">Anaconda, Spyder</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">Jupiter QT console</span></div>
+        <div><span class="checkIcon"><i class="icofont-check"></i></span><span class="innerKnowCont">Git Hub</span></div>
+    </div>
+
+    
+
+
+    <style>
+        #knowledgeSelect {
+            border: 2px solid #212121;
+            width : 1004px;
+            margin:0px auto;
+            height : 400px;
+            padding: 10px;
+        }
+        #knowledgeSelect > div {
+            /* border: 1px solid red; */
+            width : 300px;
+            height: 30px;
+            float: left;
+            margin-left: 20px;
+            margin-top : 11px;
+            padding-left: 10px;
+            /* padding-top: 3px; */
+        }
+        /* 체크표시 */
+        .checkIcon {
+            color: #48F19C;
+            font-size: 1.6em;
+        }
+        /* 안에 글자 */
+        .innerKnowCont {
+            color : white;
+        }
+
+    </style>
+
+    <!--------------------------Knowledge 끝------------------------------->
+
+
+
+    <!--------------------------포트폴리오 시작------------------------------->
+    <table class="interest" style = "border-top:hidden;">
+        <tr>
+            <td style = "width : 333px;">
+                <div class="interestTitle">Portfolio</div>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+
+    <div id = "portfolioDetailText">
+        <div id = "portfolioDetailTextTitle">Portfolio summary</div>
+        <div id = "portfolioDetailType">Web project</div>
+        <table id = "psummarytbl">
+            <tr>
+                <td class = "pftbltitle">프로젝트 명</td>
+                <td id="ptflname">At-Ticket</td>
+                <td class = "pftbltitle">개발기간</td>
+                <td id="pfreadyterm" class = "insertpftbl">2020.07.17 ~ 2020.08.28</td>
+            </tr>
+            <tr>
+                <td class = "pftbltitle">프로젝트 성격</td>
+                <td id = "pftype" class = "insertpftbl">세미 프로젝트</td>
+                <td class = "pftbltitle">개발인원</td>
+                <td id = "devpeople"class = "insertpftbl">Team Project / 6명</td>
+            </tr>
+            <tr>
+                <td class = "pftbltitle">프로젝트 개요</td>
+                <td id = "pjtgy" colspan="3" class = "insertpftbl">티켓 사이트</td>
+            </tr>
+            <tr>
+                <td class = "pftbltitle">주요 구현 기능</td>
+                <td id = "mainoperation" colspan="3" class = "insertpftbl">티켓 예매, 배너 관리, 공연 관리, 회원 관리, 직원 관리</td>
+            </tr>
+            <tr>
+                <td colspan="4" class = "pftbltitle">사용 도구</td>
+            </tr>
+            <tr>
+                <td class = "pftbltitle">개발언어</td>
+                <td id = "devlang" colspan="3" class = "insertpftbl">Java(JDK 1.8), Oracle SQL, HTML5, JavaScript, CSS3, jQuery</td>
+            </tr>
+            <tr>
+                <td class = "pftbltitle">형상관리</td>
+                <td id = "hskl" colspan="3" class = "insertpftbl">Github, Git , Source Tree</td>
+            </tr>
+            <tr>
+                <td class = "pftbltitle">개발도구</td>
+                <td id = "devtool" colspan="3" class = "insertpftbl">Eclipse JEE, Visual Studio Code, Oracle SQL Developer, eXERD, Aws</td>
+            </tr>
+            <tr>
+                <td class = "pftbltitle">사용기술</td>
+                <td id = "usingtech" colspan="3" class = "insertpftbl">JSP, Servlet, jQuery, Bootstrap, Ajax</td>
+            </tr>
+        </table>
+        <div id = "connectpfGit">
+            <i class="icofont-github"></i>상세보기
+        </div>
+    </div>
+        <!-- 포트폴리오 선택가능하게 만들것이다. -->
+    <table class="interest" id="portfoliselect">
+        <tr>
+            <td>
+                <button class="projectselectbtn" id="probtn1" style="color : #48F19C;">Web project</button>
+                <button class="projectselectbtn" id="probtn2">Java console project</button>
+                <button class="projectselectbtn" id="probtn3">Java & oracle project 1</button>
+                <button class="projectselectbtn" id="probtn4">Java & oracle project 2</button>
+                <button class="projectselectbtn" id="probtn5">Deep learning project</button>
+            </td>
+        </tr>
+    </table>
+    <table class="interestContent" style="height : 70px;">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <style>
+
+        /* 포트폴리오 설명 */
+        #portfolioDetailText {
+            border: 2px solid #212121;
+            border-bottom: none;
+            width : 1004px;
+            height : 550px;
+            margin : 0px auto;
+        }
+        #portfolioDetailTextTitle {
+            color : white;
+            /* border: 1px solid red; */
+            margin: 0px auto;
+            margin-top: 10px;
+            width : 300px;
+            text-align: center;
+            font-size: 1.8em;
+        }
+        /* 표설명 프로젝트 이름 */
+        #portfolioDetailType {
+            /* border: 1px solid blue; */
+            width : 150px;
+            margin: 10px auto;
+            text-align: center;
+            color:#48F19C;
+            transition: all .5s;
+        }
+        
+        /* 포트폴리오 설명 표 */
+        #psummarytbl {
+            border: 3px solid #212121;
+            width : 800px;
+            height : 400px;
+            margin: 0px auto;
+            margin-top: 20px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        #psummarytbl td {
+            border: 3px solid #212121;
+        }
+        #psummarytbl td:nth-child(1) {
+            width : 150px;
+        }
+        #psummarytbl td:nth-child(2) {
+            width : 150px;
+        }
+        #psummarytbl td:nth-child(3) {
+            width : 110px;
+        }
+
+        /* 상세보기 */
+        #connectpfGit {
+            border: 2px solid #48F19C;
+            color: #48F19C;
+            margin:0px auto;
+            margin-top : 10px;
+            width : 150px;
+            height: 30px;
+            text-align: center;
+            font-size: 1.2em;
+            padding: 2px;
+            transition: all 1s;
+        }
+        #connectpfGit:hover {
+            cursor: pointer;
+            background-color: #48F19C;
+            color: black;
+            font-weight: bold;
+        }
+        
+        /* 포폴 테이블에서 고정글씨데이터 */
+        .pftbltitle {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        /* 포트폴리오 이름 */
+        #ptflname {
+            color: #48F19C;
+            font-weight: bold;
+            transition: all .5s;
+        }
+        .insertpftbl {
+            color: white;
+            transition: all .5s;
+        }
+
+    </style>
+
+
+    <!-- 다시 구성해볼것이다. -->
+    <div id = "portFolioSet">
+        <div id = "firstImgSector" class = "ImgSectors">
+            <div id = "firstImgSectorCont">
+                <img src="./images/webpj.png" alt="" class = "firstImgC">
+                <img src="./images/console1.png" alt="" class="firstImgC">
+                <img src="./images/orclpj1.png" alt="" class="firstImgC">
+                <img src="./images/jop2one.png" alt="" class="firstImgC">
+                <img src="./images/deep1.png" alt="" class="firstImgC">
+            </div>
+        </div>
+        <div id = "secondImgSector" class = "ImgSectors">
+            <div id="secondImgSectorCont">
+                <img src="./images/weblogin.png" alt="" class="secondImgC">
+                <img src="./images/console2.png" alt="" class="secondImgC">
+                <img src="./images/jop1two.png" alt="" class="secondImgC">
+                <img src="./images/jop2two.png" alt="" class="secondImgC">
+                <img src="./images/deep2.png" alt="" class="secondImgC">
+            </div>
+        </div>
+        <div id = "vacantSector1"></div>
+        <div id = "vacantSector2"></div>
+        <div id = "thirdImgSector" class = "ImgSectors">
+            <div id="thirdImgSectorCont">
+                <img src="./images/webreserve.png" alt="" class="thirdImgC">
+                <img src="./images/console3.png" alt="" class="thirdImgC">
+                <img src="./images/jop1three.png" alt="" class="thirdImgC">
+                <img src="./images/jop2three.png" alt="" class="thirdImgC">
+                <img src="./images/deep3.png" alt="" class="thirdImgC">
+            </div>
+        </div>
+        <div id = "fourthImgSector" class = "ImgSectors">
+            <div id="fourthImgSectorCont">
+                <img src="./images/webseat.png" alt="" class="fourthImgC">
+                <img src="./images/console4.png" alt="" class="fourthImgC">
+                <img src="./images/jop1four.png" alt="" class="fourthImgC">
+                <img src="./images/jop2four.png" alt="" class="fourthImgC">
+                <img src="./images/deep4.png" alt="" class="fourthImgC">
+            </div>
+        </div>
+    </div>
+    
+   
+    
+    <style>
+        #portfoliselect {
+            /* border-top: 1px solid red; */
+            height: 70px;
+        }
+    
+        /* 프로젝트 select 버튼 */
+        .projectselectbtn {
+            border: 0px;
+            background-color: transparent;
+            color: #EEEEEE;
+            margin-left: 43px;
+            font-weight: bold;
+            outline: none;
+        }
+        
+        #projectimg1 {
+            /* width : 500px; */
+        }
+    
+        #projectimg2 {
+            /* width : 400px; */
+        }
+        /* 포트폴리오 사진을 담을 공간 */
+        #portFolioSet {
+            border: 2px solid #212121;
+            width : 1004px;
+            height : 780px;
+            /* margin-left : 449px; */
+            margin : 0px auto;
+        }
+        /* n번째 이미지 구역 */
+        #firstImgSector {
+            position : relative;
+            top : -2px;
+            left : -2px;
+            border: 2px solid #212121;
+            width : 450px;
+            height : 480px;
+            overflow: hidden;
+        }
+        #secondImgSector {
+            position : relative;
+            border: 2px solid #212121;
+            left : 556px;
+            top : -482px;
+            width : 446px;
+            height : 280px;
+            overflow: hidden;
+        }
+        #thirdImgSector {
+            position : relative;
+            border: 2px solid #212121;
+            width : 450px;
+            height : 234px;
+            top : -399px;
+            left : -2px;
+            overflow: hidden;
+
+        }
+        #fourthImgSector {
+            position : relative;
+            border: 2px solid #212121;
+            width : 450px;
+            height : 391px;
+            top : -790px;
+            left : 552px;
+            overflow: hidden;
+        }
+
+        /* 빈 구역 */
+        #vacantSector1 {
+            position : relative;
+            border: 2px solid #212121;
+            width : 336px;
+            height : 70px;
+            top : -284px;
+            left : -2px;
+        }
+
+        #vacantSector2 {
+            position : relative;
+            border: 2px solid #212121;
+            width : 336px;
+            height : 113px;
+            top : -554px;
+            left : 666px;
+        }
+        /* n번째 섹터 내에 직접적으로 들어가는 이미지 구역 */
+        #firstImgSectorCont {
+            /* border: 1px solid blue; */
+            width : 2300px;
+            height : 478px;
+            transition : all .5s;
+            
+        }
+        .firstImgC {
+            /* 첫번째 이미지 크기조정 */
+            height : 478px;
+            width : 450px;
+        }
+        #secondImgSectorCont {
+            /* border: 1px solid blue; */
+            width : 2300px;
+            height : 276px;
+            transition : all .5s;
+        }
+        .secondImgC {
+            width : 443px;
+            height : 276px;
+        }
+        #thirdImgSectorCont {
+            /* border: 1px solid blue; */
+            width : 3000px;
+            height : 230px;
+            transition : all .5s;
+        }
+        .thirdImgC {
+            width : 446px;
+            height : 230px; 
+        }
+        #fourthImgSectorCont {
+            /* border: 1px solid blue; */
+            width : 3000px;
+            height : 386px;
+            transition : all .5s;
+        }
+        .fourthImgC {
+            width : 445px;
+            height : 386px;
+        }
+
+        
+    </style>
+
+    <script>
+
+        var golink = "https://github.com/sexyseunghwan/At-Ticket";//상세보기 했을때 넘어가는 링크를 말함.
+
+
+         $(".projectselectbtn").click(function(){
+            $(".projectselectbtn").css("color", "#EEEEEE");
+            $("#" + $(this).attr("id")).css("color", "#48F19C");
+            
+           
+
+            if ($(this).attr("id") == "probtn1") {
+                //웹프로젝트 버튼 누른경우
+                $("#firstImgSectorCont").css("transform", "translate(0px,0px)");
+                $("#secondImgSectorCont").css("transform", "translate(0px,0px)");
+                $("#thirdImgSectorCont").css("transform", "translate(0px,0px)");
+                $("#fourthImgSectorCont").css("transform", "translate(0px,0px)");
+                
+                golink = "https://github.com/sexyseunghwan/At-Ticket";
+
+                $(".insertpftbl").css("color","#101010");//일단 글자를 숨겨주는 역할
+                $("#ptflname").css("color", "#101010");//일단 글자를 숨겨주는 역할 -> 프로젝트명은 따로 처리
+                $("#portfolioDetailType").css("color", "#101010");
+                
+                setTimeout(function () {
+                    $("#portfolioDetailType").text("Web project")
+                    $("#ptflname").text("At-Ticket");
+                    $("#pfreadyterm").text("2020.07.17 ~ 2020.08.28");
+                    $("#pftype").text("세미 프로젝트");
+                    $("#devpeople").text("Team Project / 6명");
+                    $("#pjtgy").text("티켓 사이트");
+                    $("#mainoperation").text("티켓 예매, 배너 관리, 공연 관리, 회원 관리, 직원 관리");
+                    $("#devlang").text("Java(JDK 1.8), Oracle SQL, HTML5, JavaScript, CSS3, jQuery");
+                    $("#hskl").text("Github, Git , Source Tree");
+                    $("#devtool").text("Eclipse JEE, Visual Studio Code, Oracle SQL Developer, eXERD, Aws");
+                    $("#usingtech").text("JSP, Servlet, jQuery, Bootstrap, Ajax");
+                },500);
+                
+                comeout();
+                
+            } else if ($(this).attr("id") == "probtn2") {
+                //자바콘솔 프로젝트 누른경우
+                $("#firstImgSectorCont").css("transform", "translate(-454px,0px)");
+                $("#secondImgSectorCont").css("transform", "translate(-447px,0px)");
+                $("#thirdImgSectorCont").css("transform", "translate(-450px,0px)");
+                $("#fourthImgSectorCont").css("transform", "translate(-448px,0px)");
+
+                 golink = "https://github.com/sexyseunghwan/HotelManageSystem";
+
+                $(".insertpftbl").css("color", "#101010");//일단 글자를 숨겨주는 역할
+                $("#ptflname").css("color", "#101010");//일단 글자를 숨겨주는 역할 -> 프로젝트명은 따로 처리
+                $("#portfolioDetailType").css("color", "#101010");
+
+                setTimeout(function () {
+                    $("#portfolioDetailType").text("Java console project")
+                    $("#ptflname").text("DoubleDragonCenter");
+                    $("#pfreadyterm").text("2020.05.07 ~ 2020.05.19");
+                    $("#pftype").text("세미 프로젝트");
+                    $("#devpeople").text("Team Project / 6명");
+                    $("#pjtgy").text("호텔 운영/이용 사이트");
+                    $("#mainoperation").text("객실 예약, 객실 관리, 호텔 사무 관리 등 호텔운영/이용 가능 시스템 구현");
+                    $("#devlang").text("Java(JDK 1.8)");
+                    $("#hskl").text("Github, Git , Source Tree");
+                    $("#devtool").text("Eclipse IDE");
+                    $("#usingtech").text("Java Console");
+                }, 500);
+
+                comeout();
+                
+
+            } else if ($(this).attr("id") == "probtn3") {
+                //자바 & 오라클 프로젝트1 누른경우
+                $("#firstImgSectorCont").css("transform", "translate(-910px,0px)");
+                $("#secondImgSectorCont").css("transform", "translate(-894px,0px)");
+                $("#thirdImgSectorCont").css("transform", "translate(-900px,0px)");
+                $("#fourthImgSectorCont").css("transform", "translate(-898px,0px)");
+
+                golink = "https://github.com/sexyseunghwan/Dodori-Center";
+
+                $(".insertpftbl").css("color", "#101010");//일단 글자를 숨겨주는 역할
+                $("#ptflname").css("color", "#101010");//일단 글자를 숨겨주는 역할 -> 프로젝트명은 따로 처리
+                $("#portfolioDetailType").css("color", "#101010");
+                
+                setTimeout(function () {
+                    $("#portfolioDetailType").text("Java & oracle project 1")
+                    $("#ptflname").text("Dodori center");
+                    $("#pfreadyterm").text("2020.06.15 ~ 2020.06.23");
+                    $("#pftype").text("세미 프로젝트");
+                    $("#devpeople").text("Team Project / 6명");
+                    $("#pjtgy").text("교육시설 운영 프로그램");
+                    $("#mainoperation").text("교육센터 사무 관리, 교사 관리, 학생 관리, 수업체계 구현, 반별 동아리 시스템 구축");
+                    $("#devlang").text("Java(JDK 1.8), Oracle SQL");
+                    $("#hskl").text("Github, Git , Source Tree");
+                    $("#devtool").text("Eclipse JEE, Oracle SQL Developer, eXERD");
+                    $("#usingtech").text("JDBC");
+                }, 500);
+
+                comeout();
+                
+                
+            } else if ($(this).attr("id") == "probtn4") {
+                //자바 & 오라클 프로젝트2 누른경우
+                $("#firstImgSectorCont").css("transform", "translate(-1364px,0px)");
+                $("#secondImgSectorCont").css("transform", "translate(-1341px,0px)");
+                $("#thirdImgSectorCont").css("transform", "translate(-1350px,0px)");
+                $("#fourthImgSectorCont").css("transform", "translate(-1347px,0px)");
+                
+
+                golink = "https://github.com/sexyseunghwan/LibraryManagementSystem";
+
+                $(".insertpftbl").css("color", "#101010");//일단 글자를 숨겨주는 역할
+                $("#ptflname").css("color", "#101010");//일단 글자를 숨겨주는 역할 -> 프로젝트명은 따로 처리
+                $("#portfolioDetailType").css("color", "#101010");
+
+                setTimeout(function () {
+                    $("#portfolioDetailType").text("Java & oracle project 2")
+                    $("#ptflname").text("도서관리 프로그램");
+                    $("#pfreadyterm").text("2020.06.18 ~ 2020.07.03");
+                    $("#pftype").text("세미 프로젝트");
+                    $("#devpeople").text("Team Project / 6명");
+                    $("#pjtgy").text("국립 도서관 이용/관리 프로그램");
+                    $("#mainoperation").text("도서관리, 도서대여, 민원게시판, 교육행사 시스템, 열람실 이용, 원문복사 구현");
+                    $("#devlang").text("Java(JDK 1.8), Oracle SQL");
+                    $("#hskl").text("Github, Git , Source Tree");
+                    $("#devtool").text("Eclipse JEE, Oracle SQL Developer, eXERD, AWS");
+                    $("#usingtech").text("JDBC");
+                }, 500);
+                
+                comeout();
+
+
+
+
+
+            } else {
+                //딥러닝 프로젝트 누른 경우
+                $("#firstImgSectorCont").css("transform", "translate(-1818px,0px)");
+                $("#secondImgSectorCont").css("transform", "translate(-1788px,0px)");
+                $("#thirdImgSectorCont").css("transform", "translate(-1800px,0px)");
+                $("#fourthImgSectorCont").css("transform", "translate(-1795px,0px)");
+
+                golink = "https://github.com/sexyseunghwan/Deep-Learning";
+
+                $(".insertpftbl").css("color", "#101010");//일단 글자를 숨겨주는 역할
+                $("#ptflname").css("color", "#101010");//일단 글자를 숨겨주는 역할 -> 프로젝트명은 따로 처리
+                $("#portfolioDetailType").css("color", "#101010");
+                
+
+                setTimeout(function () {
+                    $("#portfolioDetailType").text("Deep learning project")
+                    $("#ptflname").text("파이썬으로 본 손글씨");
+                    $("#pfreadyterm").text("2019.07 ~ 2019.09");
+                    $("#pftype").text("딥러닝 프로젝트");
+                    $("#devpeople").text("개인 / 1명");
+                    $("#pjtgy").text("손글씨 판정 프로그래밍");
+                    $("#mainoperation").text("손글씨 데이터(0~9)를 인공신경망 학습후, 직접 손으로 숫자를 적게되면 컴퓨터가 맞추는 시스템");
+                    $("#devlang").text("Python");
+                    $("#hskl").text("-");
+                    $("#devtool").text("Ananconda, jupiter QT console");
+                    $("#usingtech").text("Numpy, Pandas, Matplotlib");
+                }, 500);
+
+                comeout();
+
+
+
+
+
+            }
+
+         });
+        
+        
+        //글씨 서서히 보이게 하는 함수.
+        function comeout() {
+           setTimeout(function () {
+               $(".insertpftbl").css("color","white");
+               $("#ptflname").css("color","#48F19C");
+               $("#portfolioDetailType").css("color", "#48F19C");
+           },500); 
+        }
+
+         $("#connectpfGit").click(function(){
+            window.open(golink);
+         });
+
+        
+         
+
+
+    </script>
+
+
+
+    <!--------------------------포트폴리오 끝------------------------------->
+
+
+    <!--------------------------contact 시작------------------------------->
+
+    
+    <table class="interest" style="border-top:hidden;">
+        <tr>
+            <td style="width : 333px;">
+                <div class="interestTitle">Contact</div>
+            </td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <table class="interestContent">
+        <tr>
+            <td class="bigInter">
+                <div class="inter1"><i class="icofont-phone"></i></div>
+                <div class="inter1cont">Phone</div>
+                <div class="inter1contdetail">010 - 5139 - 3792</div>
+            </td>
+            <td></td>
+            <td class="bigInter">
+                <div class="inter1"><i class="icofont-ui-email"></i></div>
+                <div class="inter1cont">Email</div>
+                <div class="inter1contdetail"><a href="mailto:ssh9308@naver.com" id = "contactMail">ssh9308@naver.com</a></div>
+            </td>
+        </tr>
+    </table>
+    
+    
+    
+    <table class="interestContent" style="height : 100px;">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    
+    <table class="interestContent">
+        <tr>
+            <td class="bigInter">
+                <div class="inter1"><i class="icofont-github"></i></div>
+                <div class="inter1cont">Git Hub</div>
+                <div class="inter1contdetail"><span id = "gitClick">Click to Connect</span></div>
+            </td>
+            <td></td>
+            <td class="bigInter">
+                <div class="inter1"><i class="icofont-kakaotalk"></i></div>
+                <div class="inter1cont">KakaoTalk</div>
+                <div class="inter1contdetail">- ssh9308<br>- sysh<br></div>
+            </td>
+        </tr>
+    </table>
+
+    <table class="interestContent" style="height : 100px;">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <table class="interestContent">
+        <tr>
+            <td class="bigInter">
+                <div class="inter1"><i class="icofont-instagram"></i></div>
+                <div class="inter1cont">Instagram</div>
+                <div class="inter1contdetail" id="instago">Click to Connect</div>
+            </td>
+            <td></td>
+            <td class="bigInter">
+                <div class="inter1"><i class="icofont-facebook"></i></div>
+                <div class="inter1cont">Facebook</div>
+                <div class="inter1contdetail" id="facego">Click to Connect</div>
+            </td>
+        </tr>
+    </table>
+
+    <style>
+        /* 깃 연결관련 */
+        #gitClick {
+            transition : all .5s;
+            text-decoration: underline; 
+        }
+        #gitClick:hover {
+            cursor: pointer;
+            color : #48F19C;
+        }
+        /* 이메일 연동 관련 */
+        #contactMail {
+            color: #BBBBBB;
+            text-decoration: underline; 
+            transition : all .5s;
+        }
+        #contactMail:hover {
+            color : #48F19C;
+        }
+        /* 인스타 연결 관련 */
+        #instago {
+            transition : all .5s;
+            text-decoration: underline; 
+        }
+        #instago:hover {
+            cursor: pointer;
+            color : #48F19C;
+        }
+        /* 페이스북 연결 관련 */
+        #facego {
+            transition : all .5s;
+            text-decoration: underline; 
+        }
+        #facego:hover {
+            cursor: pointer;
+            color : #48F19C;
+        }
+    </style>
+
+    <script>
+        //깃 허브 연결 클릭 했을 경우
+        $("#gitClick").click(function(){
+            window.open("https://github.com/sexyseunghwan");
+            // location.href = "https://github.com/sexyseunghwan";
+        });
+        
+        //인스타 연결 클릭 했을 경우
+        $("#instago").click(function () {
+            window.open("https://www.instagram.com/ssh9308/?hl=ko");
+            // location.href = "https://www.instagram.com/ssh9308/?hl=ko";
+        });
+        
+        //페이스북 연결 클릭 했을 경우
+        $("#facego").click(function () {
+            window.open("https://www.facebook.com/profile.php?id=100003495608722");
+            // location.href = "https://www.facebook.com/profile.php?id=100003495608722";
+        });
+    </script>
+
+    <!--------------------------contact 끝------------------------------->
+    <table class="interestContent" style="height : 200px;">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+  
+
+
+</body>
+
+<script>
+    //마우스 움직일때 효과 -> 일단 보류한다.
+    //  function resultFun(x) {
+    //     var positionLeft = x.clientX;//x좌표를 받는것
+    //     var positionTop =  x.clientY;//y좌표를 받는것
+
+    //     document.getElementById('result').style.left = positionLeft - 10 + "px";
+    //     document.getElementById('result').style.top = positionTop - 10 +"px";
+    //  }
+
+    //  if (document.addEventListener) {
+    //      document.addEventListener("mousemove",resultFun);
+    //  } else if (document.attachEvent) {
+    //      document.addEventListener("onmousemove",resultFun);
+    //  }
+
+
+</script>
+
+</html>

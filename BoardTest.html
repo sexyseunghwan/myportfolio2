@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- https://sexyseunghwan.github.io/MyPortfolio/index.html -->
+    <div id = "search">
+        <input type="text">
+        <button style = "outline: none;">검색</button>
+    </div>
+    
+    <table id = "tblBook">
+        <tr>
+            <th>번호</th>
+            <th>책 제목</th>
+            <th>출판사</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>점프 투 <span style = "color : red; font-weight: bold;">파이썬</span></td>
+            <td>이지스 퍼블리싱</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>점프 투 파이썬</td>
+            <td>이지스 퍼블리싱</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>점프 투 파이썬</td>
+            <td>이지스 퍼블리싱</td>
+        </tr>
+    </table>
+
+    <div id = "pagebar">
+        <ul>
+            <li><a href="" disabled>이전</a></li>
+            <li><a href="" style = "color : red;">1</a></li>
+            <li><a href="">2</a></li>
+            <li><a href="">3</a></li>
+            <li><a href="">4</a></li>
+            <li><a href="">5</a></li>
+            <li><a href="">6</a></li>
+            <li><a href="">7</a></li>
+            <li><a href="">8</a></li>
+            <li><a href="">9</a></li>
+            <li><a href="">10</a></li>
+            <li><a href="">다음</a></li>
+        </ul>
+    </div>
+    
+    
+
+    <style>
+
+        /* 검색 */
+        #search {
+            /* border: 1px solid red; */
+            width : 240px;
+            height : 25px;
+            margin-left : 1025px;
+            margin-top : 20px;
+        }
+
+        /* 페이징 처리 */
+        #pagebar {
+            width : 300px;
+            margin: 0px auto;
+        }
+        
+        #pagebar li{
+            list-style: none;
+            display: inline;
+        }
+
+        /* 게시판 */
+        #tblBook {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin : 10px auto;
+            width : 600px;
+            /* text-align: center; */
+        }
+        #tblBook td,th {
+            border: 1px solid black;
+        }
+        #tblBook th {
+            background-color: blueviolet;
+            text-align: center;
+        }
+    </style>
+
+</body>
+</html>
