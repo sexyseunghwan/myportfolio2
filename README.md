@@ -53,8 +53,8 @@ Git Pages와 HTML5, CSS3, JavaScript를 이용한 싱글페이지 포트폴리�
 <table>
     <tr>
         <th>About</th>
-        <th>Experience&Eduction</th>
-        <th>Project</th>
+        <th>Experience & Eduction</th>
+        <th>Strength</th>
     </tr>
     <tr>        
         <td><img width="266" height="160" src="/images/pfhome.png"></td>
@@ -63,7 +63,7 @@ Git Pages와 HTML5, CSS3, JavaScript를 이용한 싱글페이지 포트폴리�
     </tr>
         <tr>
         <th>Skills</th>
-        <th>Eduction</th>
+        <th>Portfolio</th>
         <th>Contact</th>
     </tr>
     <tr>
