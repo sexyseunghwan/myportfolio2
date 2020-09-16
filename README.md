@@ -1,7 +1,7 @@
 
 # Seung Hwan Shin's Portfolio
 
-**신승환의 포트폴리오 | [▶ Preview](https://sexyseunghwan.github.io/Portfolio/)** 
+**신승환의 포트폴리오 | [▶ Preview](https://sexyseunghwan.github.io/myportfolio2/)** 
 
 
 ### 👋 Introduction
