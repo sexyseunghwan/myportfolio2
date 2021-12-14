@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <script src = "https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="../css/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+    <title>Document</title>
+
+    <style>
+         
+         #test {
+                width: 100px;
+                height: 100px;
+        }
+         
+        body {
+            -webkit-text-size-adjust: none;
+            height: 3000px;
+            border: 1px solid red;
+            margin: 0px auto;
+            font-family: "AppleSDGothicNeo", "맑은 고딕", sans-serif;
+        }
+        
+        /*---------------------페이지 상단 시작 css--------------------------*/
+        #topTitle {
+            border: 1px solid blue;
+            height : 100px;
+            width : 100%;
+            position: fixed;
+            background-color: #101010;
+            z-index: 10;
+        }
+        #title {
+            /* border: 1px solid red; */
+            color : white;
+            width : 170px;
+            font-size: 1.2em;
+            float : left;
+            margin-left : 20px;
+            font-variant: small-caps;
+            text-align: center;
+        }
+        #menu > span {
+            /* border: 1px solid grey; */
+            margin-left : 30px;
+        }
+        #menu {
+            /* border: 1px solid orange; */
+            color: #A3A3A3;
+            width : 500px;
+            font-size: 1.2em;
+            float : right;
+            font-variant: initial;
+
+        }
+        .topbtn {
+            transition: all .2s;
+            /* border: 1px solid red; */
+        }
+        .topcontent {
+            margin-top : 55px;
+            /* border: 1px solid orange; */
+        }
+        .topbtn:hover {
+            cursor:pointer;
+        }
+        
+        /*---------------------페이지 상단 사진 시작 css--------------------------*/
+
+        #topPic {
+            /* border: 1px solid orange; */
+            width : 100%;
+            height : 1000px;
+            background-image: url(./images/background.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position-y: 10%;
+            background-color:#101010; 
+        }
+        #topPicWriter {
+            /* border: 1px solid red; */
+            position: relative;
+            width: 1525px;
+            height: 200px;
+            top : 40%;
+            text-align: center;
+        }
+        #topPicWriter span {
+            color : white;
+            font-size: 6em;
+            font-family: fantasy;
+            
+        }
+
+        /*****************************미디어 쿼리 css******************************/
+        @media (max-width: 640px) {
+            body {
+                width : 370px;
+            }
+            
+            /*---------------------페이지 상단 시작 css--------------------------*/
+            #topTitle {
+                border: 1px solid blue;
+                height : 100px;
+                width : 100%;
+                position: fixed;
+                background-color: #101010;
+                z-index: 10;
+            }
+
+            #title {
+                margin-top: 10px;
+                margin-left: 25%;
+            } 
+
+            #menu {
+                color: #A3A3A3;
+                font-size: 1.2em;
+                font-variant: initial;
+                width: 100%;
+                float : left;
+                margin-top: 35px;
+                /* border: 1px solid green; */
+            }
+
+            #menu > span {
+                margin-left : 16px;
+            }  
+            
+            /*---------------------페이지 상단 사진 시작 css--------------------------*/
+
+            #topPic {
+                /* border: 1px solid orange; */
+                width : 100%;
+                height : 400px;
+                background-image: url(./images/pfhomephone.png);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position-y: 10%;
+                background-color:#101010; 
+            }
+            #topPicWriter {
+                /* border: 1px solid red; */
+                margin: 0px auto;
+                position: relative;
+                width: 100%;
+                /* float: left; */
+                height: 150px;
+                text-align: center;
+            }
+            #topPicWriter span {
+                color : white;
+                font-size: 3em;
+                font-family: fantasy;
+
+            }
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <!---------------------페이지 상단  시작-------------------------->
+    <div id = "topTitle">
+        <nav id="title" class = "topcontent">
+            <span data-item="item1">Junior Web Developer</span>
+        </nav>
+        <nav id="menu" class = "topcontent">
+            <span id="item1" class = "topbtn" style = "color : white;">Home</span>
+			<span id="item2" class = "topbtn">About</span>
+			<span id="item3" class = "topbtn">Skill</span>
+			<span id="item4" class = "topbtn">Portfolio</span>
+			<span id="item5" class = "topbtn">Contact</span>
+        </nav>
+    </div>
+
+    <!---------------------페이지 상단 사진 시작-------------------------->
+    <div id = "topPic">
+       <div id = "topPicWriter">
+           <span id = "topPicWriter2"></span>
+       </div>
+    </div>
+
+    <script>
+        
+        let topPicWriter2Text = "";
+        let cycle = 0;
+        let num = 0;
+        const textList = ["I"," ","c","o","d","e"," ","c","o","o","l"," ","w","e","b","s","i","t","e", "", "", "", "", "", "", "", "", ""];
+        const textListNew = ["C","r","e","a","t","e"," ","w","h","a","t"," ","y","o","u"," ","w","a","n","t"," ","t","o"," ","u","s","e", "", "", "", "", "", "","", "", ""];
+        const textListOld = ["S","t","a","y"," ","H","u","n","g","r","y",", ","S","t","a","y"," ","F","o","o","l","i","s","h", "", "", "", "", "", "", "", "", ""];
+        let selectWord = 0;
+        let texts = [textList,textListNew,textListOld];
+        let selectText = "";
+        
+        $(document).ready(function(){
+            timer = setInterval(function(){
+                
+                if (selectWord == 0) {
+                    selectText = texts[0];
+                } else if (selectWord == 1) {
+                    selectText = texts[1];
+                } else {
+                    selectText = texts[2];
+                }
+
+                if (cycle % 2 == 0) {
+                    if (num == selectText.length-1) {
+                        topPicWriter2Text += selectText[num];
+                        $("#topPicWriter2").text(topPicWriter2Text);
+                        cycle++;
+                    } else {
+                        topPicWriter2Text += selectText[num];
+                        $("#topPicWriter2").text(topPicWriter2Text);
+                        num++;
+                    }
+                } else {
+                    if (num == 0) {
+                       $("#topPicWriter2").empty();
+                        topPicWriter2Text = topPicWriter2Text.substr(0,(num-1));
+                        $("#topPicWriter2").text(topPicWriter2Text);
+                        cycle++;
+                        if (selectWord == 2){
+                            selectWord=0;
+                        } else {
+                            selectWord++;
+                        }
+                        
+                    } else {
+                        $("#topPicWriter2").empty();
+                        topPicWriter2Text = topPicWriter2Text.substr(0,(num-1));
+                        $("#topPicWriter2").text(topPicWriter2Text);
+                        num--;
+                    }
+                }
+            },50);
+        });
+        
+
+    </script>
+</body>
+</html>

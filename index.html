@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <!-- https://code.jquery.com/jquery-1.12.4.js -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <!-- <script src="../css/js/jquery-1.12.4.js"></script> -->
     <script src = "https://code.jquery.com/jquery-1.12.4.js"></script>
     <!-- <script src="../css/js/jquery-ui.js"></script> -->
@@ -116,8 +117,9 @@
     </div>
     
     <style>
+
         #topTitle {
-            /* border: 1px solid white; */
+            border: 1px solid white;
             height : 100px;
             width : 100%;
             position: fixed;
@@ -125,7 +127,7 @@
             z-index: 10;
         }
         #title {
-            /* border: 1px solid red; */
+            border: 1px solid red;
             color : white;
             width : 500px;
             font-size: 1.2em;
@@ -134,11 +136,11 @@
             font-variant: small-caps;
         }
         #menu > span {
-            /* border: 1px solid grey; */
+            border: 1px solid grey;
             margin-left : 30px;
         }
         #menu {
-            /* border: 1px solid orange; */
+            border: 1px solid orange;
             color: #A3A3A3;
             width : 520px;
             font-size: 1.2em;
@@ -155,7 +157,14 @@
             cursor:pointer;
             /* color : white; */
         }
-  
+        
+        @media (max-width: 640px) {
+            #topTitle {
+                width: 100px;
+                height: 100px;
+            }
+
+        }
 
         
     </style>
@@ -295,12 +304,12 @@
         var cycle = 0;
         var num = 0;
         var textList = ["I"," ","c","o","d","e"," ","c","o","o","l"," ","w","e","b","s","i","t","e", "", "", "", "", "", "", "", "", ""];
-        // var textListNew = ["I", " ","L","o","v","e"," ","J","a","v","a","♥","","","","",""];
         var textListNew = ["C","r","e","a","t","e"," ","w","h","a","t"," ","y","o","u"," ","w","a","n","t"," ","t","o"," ","u","s","e", "", "", "", "", "", "","", "", ""];
         var textListOld = ["S","t","a","y"," ","H","u","n","g","r","y",", ","S","t","a","y"," ","F","o","o","l","i","s","h", "", "", "", "", "", "", "", "", ""];
         var selectWord = 0;
         var texts = [textList,textListNew,textListOld];
         var selectText = "";
+        
         $(document).ready(function(){
             timer = setInterval(function(){
                 
@@ -1571,20 +1580,7 @@
 </body>
 
 <script>
-    //마우스 움직일때 효과 -> 일단 보류한다.
-    //  function resultFun(x) {
-    //     var positionLeft = x.clientX;//x좌표를 받는것
-    //     var positionTop =  x.clientY;//y좌표를 받는것
 
-    //     document.getElementById('result').style.left = positionLeft - 10 + "px";
-    //     document.getElementById('result').style.top = positionTop - 10 +"px";
-    //  }
-
-    //  if (document.addEventListener) {
-    //      document.addEventListener("mousemove",resultFun);
-    //  } else if (document.attachEvent) {
-    //      document.addEventListener("onmousemove",resultFun);
-    //  }
 
 
 </script>
